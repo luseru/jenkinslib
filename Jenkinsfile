@@ -3,6 +3,7 @@
 def tools = new org.devops.tools()
 
 String workspace = "/opt/jenkins/worksapce"
+hello()
 //pipeline
 pipeline{
     parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
