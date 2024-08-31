@@ -1,6 +1,8 @@
-String workspace = "/opt/jenkins/worksapce"
+#!groovy
 @Library('jenkinslib') _
 def tools = new org.devops.tools()
+
+String workspace = "/opt/jenkins/worksapce"
 //pipeline
 pipeline{
     parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
