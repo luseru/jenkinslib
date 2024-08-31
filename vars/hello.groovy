@@ -1,1 +1,3 @@
-
+def call(){
+    println("hello")
+}
