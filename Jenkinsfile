@@ -64,7 +64,7 @@ pipeline{
                         timeout(time:20, unit:'MINUTES'){    
                             script{ 
                                 //println("代码扫描")
-                                tools.PrintMes("代码扫描",'red')
+                                tools.PrintMes("代码扫描",'green')
                                 tools.PrintMes("this is my lib!",'blue')
                             }
                         }
