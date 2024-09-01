@@ -30,7 +30,8 @@ pipeline{
             steps{ //步骤
                 timeout(time:5, unit:'MINUTES'){    //步骤超时时间限制
                     script{ //填写运行代码
-                        println("获取代码")
+                        //println("获取代码")
+                        tools.PrintMes("获取代码",'red')
                         println("${test}")
                         println("${DEPLOY_ENV}")   //指定运行工作目录（可选）
                         input id: 'Test', message: 'Should we continue?', ok: 'Yes, we should.', parameters: [choice(choices: ['a', 'b'], description: 'a or b', name: 'good')], submitter: 'admin'
@@ -47,7 +48,8 @@ pipeline{
                     steps{ 
                         timeout(time:20, unit:'MINUTES'){    
                             script{ 
-                                println("应用打包")
+                                //println("应用打包")
+                                tools.PrintMes("应用打包",'red')
                                 mvnHome = tool "m2"
                                 println(mvnHome)
                                 sh "${mvnHome}/bin/mvn --version"
@@ -61,8 +63,9 @@ pipeline{
                     steps{ 
                         timeout(time:20, unit:'MINUTES'){    
                             script{ 
-                                println("代码扫描")
-                                tools.PrintMes("this is my lib!")
+                                //println("代码扫描")
+                                tools.PrintMes("代码扫描",'red')
+                                tools.PrintMes("this is my lib!",'blue')
                             }
                         }
                     }
